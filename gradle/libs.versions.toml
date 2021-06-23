@@ -1,0 +1,82 @@
+[versions]
+
+kotlinVersion = "1.5.10"
+
+retrofitVersion = "2.9.0"
+okHttpVersion = "4.9.0"
+moshiVersion = "1.12.0"
+composeVersion = "1.0.0-beta07"
+lifecycleVersion = "2.3.1"
+navigationVersion = "2.3.4"
+pagingVersion = "3.0.0"
+
+[libraries]
+
+# Coroutines
+androidCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+
+# Retrofit
+retrofitRuntime = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+retrofitMoshiConverter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofitVersion" }
+
+# OkHttp
+okHttpRuntime = { module = "com.squareup.okhttp3:okhttp", version.ref = "okHttpVersion" }
+okHttpLogging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttpVersion" }
+
+# Moshi
+moshiRuntime = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiVersion" }
+moshiCodegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshiVersion" }
+
+# Jetpack Compose
+activityCompose = "androidx.activity:activity-compose:1.3.0-alpha08"
+composeUi = { module = "androidx.compose.ui:ui", version.ref = "composeVersion" }
+composeMaterial = { module = "androidx.compose.material:material", version.ref = "composeVersion" }
+composeTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "composeVersion" }
+composeUiTesting = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "composeVersion" }
+
+# AndroidX
+androidCoreKtx = "androidx.core:core-ktx:1.5.0"
+androidAppCompat = "androidx.appcompat:appcompat:1.3.0"
+androidMaterialComponents = "com.google.android.material:material:1.3.0"
+androidActivityKtx = "androidx.activity:activity-ktx:1.3.0-beta01"
+androidFragmentKtx = "androidx.fragment:fragment-ktx:1.4.0-alpha02"
+androidConstraintLayout = "androidx.constraintlayout:constraintlayout:2.1.0-beta02"
+androidEmoji = "androidx.emoji:emoji:1.2.0-alpha03"
+androidMultidex = "androidx.multidex:multidex:2.0.1"
+androidPalette = "androidx.palette:palette-ktx:1.0.0"
+androidBrowser = "androidx.browser:browser:1.3.0"
+androidAnnotation = "androidx.annotation:annotation:1.3.0-alpha01"
+androidBiometric = "androidx.biometric:biometric-ktx:1.2.0-alpha03"
+
+# AndroidX Paging
+androidPagingCommonKtx = { module = "androidx.paging:paging-common-ktx", version.ref = "pagingVersion" }
+androidPagingRuntimeKtx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingVersion" }
+androidPagingRxJava = { module = "androidx.paging:paging-rxjava2-ktx", version.ref = "pagingVersion" }
+
+# Jetpack Navigation Components
+navigationFragmentKtx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationVersion" }
+navigationUiKtx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationVersion" }
+
+# AndroidX Jetpack Lifecycle
+lifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+lifecycleCommon = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleVersion" }
+liveDataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
+viewModelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
+viewModelSavedState = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "lifecycleVersion" }
+
+# Testing
+testingJunit = "junit:junit:4.13.2"
+testingExtJunit = "androidx.test.ext:junit:1.1.2"
+testingEspresso = "androidx.test.espresso:espresso-core:3.3.0"
+
+[bundles]
+okHttp = ["okHttpRuntime", "okHttpLogging"]
+compose = ["composeUi", "composeMaterial", "composeTooling", "activityCompose", "composeUiTesting"]
+retrofit = ["retrofitRuntime", "retrofitMoshiConverter"]
+
+commonAndroid = ["androidCoreKtx", "androidAppCompat", "androidMaterialComponents"]
+commonTesting = ["testingJunit", "testingExtJunit", "testingEspresso"]
+
+jetpackLifecycle = ["lifecycleRuntime", "lifecycleCommon", "liveDataKtx", "viewModelKtx", "viewModelSavedState"]
+
+jetpackNavigation = ["navigationFragmentKtx", "navigationUiKtx"]
